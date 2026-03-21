@@ -24,9 +24,6 @@ const float offsetVoltage = 0; // (V) voltage offset of the battery
 // Flag which will be set in ISR when conversion is done
 volatile bool adc_coversion_done = false;
 
-// Result structure for ADC Continuous reading
-adc_continuous_data_t *result = NULL;
-
 // ISR Function that will be triggered when ADC conversion is done
 void ARDUINO_ISR_ATTR adcComplete() {
   adc_coversion_done = true;

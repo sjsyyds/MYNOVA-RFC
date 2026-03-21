@@ -418,7 +418,11 @@ void SendDataPage::onButton4(void* context) {
 }
 
 void SendDataPage::onButton5(void* context) {
-    onButtonEnter(context);
+    if (currentState == STATE_SELECT) {
+        onButtonEnter(context);
+    } else if (currentState == STATE_SET_QUICK) {
+        setAsQuickKey(5);
+    }
 }
 
 void SendDataPage::onButton6(void* context) {
